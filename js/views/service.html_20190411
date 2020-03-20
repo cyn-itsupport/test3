@@ -1,0 +1,79 @@
+<div id="container">
+  <div style="margin: 1px;" class="demo-flex-display">
+
+
+    <!-- Film strip -------------------------------------------------------------------------------------------------------->
+    <div class="oj-flex">
+      <div class="oj-flex-item">
+
+        <style>
+          .demo-filmstrip-item {
+            box-sizing: border-box;
+            width: 110px;
+            height: 55px;
+            margin: 3px;
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+          }
+        
+          /* .demo-arrow-controls {
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 5px;
+          } */
+        </style>
+                    <!-- <a href="#" data-bind="style: {display: getMasterItemInitialDisplay($index())}, 
+                         attr:  {'aria-labelledby': getMasterItemLabelledBy($index())}, 
+                         click: masterClick"> , css: {'oj-selected': isMasterItemSelected($index())} oj-panel-shadow-sm on-click="[[masterClick]]"> 
+                        data-bind="style: {display: getItemInitialDisplay($index())}"-->
+        <!-- <div id="sampleDemo" style="margin: 20px;" class="demo-palette-panel oj-panel ">
+          <oj-film-strip id="filmStrip" aria-label="Set of typeArray" arrow-placement="adjacent" arrow-visibility="auto">
+
+            <-- ko foreach: typeArray >
+              <a href="#" on-click="[[masterClick]]">
+              <div class="oj-panel oj-panel-alt2 demo-filmstrip-item"
+                   data-bind="style: {display: getItemInitialDisplay($index())}">
+                <span data-bind="text: label"></span>
+              </div>
+            </a>
+            <-- /ko >
+
+          </oj-film-strip>
+        </div> -->
+        <div id="filmStripDiv" class="oj-panel oj-panel-shadow-sm" style="margin: 2px;">
+          <oj-film-strip id="filmStrip" aria-label="Set of typeArray" arrow-placement="adjacent"arrow-visibility="auto">
+
+            <!-- ko foreach: typeArray -->
+            <a href="#" data-bind="style: {display: getItemInitialDisplay($index())}" on-click="[[masterClick]]">
+              <div class="oj-panel oj-panel-alt2 demo-filmstrip-item" >
+                <span data-bind="text: label"></span>
+              </div>
+            </a>
+            <!-- /ko -->
+
+          </oj-film-strip>
+        </div> <!-- end filmStripDiv -->
+
+
+      </div>
+    </div>
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>

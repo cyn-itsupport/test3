@@ -1,0 +1,540 @@
+<div id="container">
+    <div style="margin: 1px;" class="demo-flex-display">
+        <!-- TEST -->
+
+        <div class="oj-flex">
+
+            <!-- <div class="oj-flex-item" style="max-width: 25%">
+          <-- <oj-toolbar aria-label='Editing Toolbar' aria-controls='controlled'> --
+              <div id='buttons-container'>
+                  <oj-buttonset-one id="drinkset" value="{{drink}}" on-value-changed='[[ListenerType]]'>
+                      <-- ko foreach: drinkValues --
+                      <oj-option id="iddrinkset"  value='[[id]]' disabled='[[display]]'><span data-bind="text: label"></span>
+                      </oj-option>
+                      <-- /ko --
+                  </oj-buttonset-one>  
+              </div>
+           <-- </oj-toolbar>  --
+      </div> -->
+            <div class="oj-flex-item">
+                <div class="oj-flex">
+
+                    <div class="oj-flex-item" style="max-width: 12%">
+                        <oj-label for="groupSelect">
+                            <p style="font-size:12px; font-weight:bold; color:red;">Select Test Station:</p>
+                        </oj-label>
+                    </div>
+                    <div class="oj-flex-item">
+                        <oj-select-one id="basicSelect" value="{{v_m_group}}" on-value-changed="[[valueChangedHandler]]" style="max-width:20em">
+                            <oj-option value="TRIAGE">TRIAGE</oj-option>
+                            <oj-option value="FQC">FQC</oj-option>
+                            <oj-option value="OQC">OQC</oj-option>
+                            <oj-option value="OBA">OBA</oj-option>
+                            <oj-optgroup label="PORT - B1C1">
+                                <oj-option value="B4_PORTAudio">Audio</oj-option>
+                                <oj-option value="B4_PORTCam1">Cam1</oj-option>
+                                <oj-option value="B4_PORTCam2">Cam2</oj-option>
+                                <oj-option value="B4_PORTIMU">IMU</oj-option>
+                            </oj-optgroup>
+                            <oj-optgroup label="PORT - B4S4">
+                                <oj-option value="B1_PORTAudio">Audio </oj-option>
+                                <oj-option value="B1_PORTCamOIS">CamOIS</oj-option>
+                                <oj-option value="B1_PORTIMU">IMU </oj-option>
+                            </oj-optgroup>
+                            <oj-optgroup label="PORT - F2C2">
+                                <oj-option value="F2_Audio">Audio</oj-option>
+                                <oj-option value="F2_Laser">Laser</oj-option>
+                                <oj-option value="F2_LaserCam3">LaserCam3</oj-option>
+                                <oj-option value="F2_LaserCam2">LaserCam2</oj-option>
+                                <oj-option value="F2_OSLO">OSLO</oj-option>
+                                <oj-option value="F2_Display">Display</oj-option>
+                            </oj-optgroup>
+                        </oj-select-one>
+                    </div>
+                </div>
+
+                <!-- <div class="oj-flex">  
+          <div class="oj-flex">
+            <div id='buttons-container_two'>
+                <oj-buttonset-one id="drinkset_two" value="{{drink_two}}" on-value-changed='[[Listener_two]]'>
+                    <-- ko foreach: drinkValues_two 
+                    <oj-option id="iddrinkset_two"  value='[[id]]' disabled='[[display]]'><span data-bind="text: label"></span>
+                    </oj-option>
+                    <-- /ko 
+                </oj-buttonset-one>  
+            </div>
+          </div>  
+        </div>  -->
+            </div>
+
+        </div>
+
+        <!-- Film strip -------------------------------------------------------------------------------------------------------->
+        <!-- <div class="oj-flex">
+      <div class="oj-flex-item">
+
+        <style>
+          .demo-filmstrip-item {
+            box-sizing: border-box;
+            width: 110px;
+            height: 55px;
+            margin: 3px;
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+          }
+        </style>
+
+        <div id="filmStripDiv" class="oj-panel oj-panel-shadow-sm" style="margin: 2px;">
+          <oj-film-strip id="filmStrip" aria-label="Set of typeArray" arrow-placement="adjacent"
+            arrow-visibility="auto">
+
+            <-- ko foreach: typeArray >
+            <a href="#" data-bind="style: {display: getItemInitialDisplay($index())}" on-click="[[masterClick]]">
+              <div class="oj-panel oj-panel-alt2 demo-filmstrip-item">
+                <span data-bind="text: label"></span>
+              </div>
+            </a>
+            <-- /ko >
+
+          </oj-film-strip>
+        </div>
+
+
+      </div>
+    </div> -->
+
+
+
+
+        <div class="oj-flex demo-panelwrapper">
+
+            <!-- <div class="oj-flex-item oj-flex oj-xl-flex-items-1" style="max-width: 8%">
+          <div class="oj-flex-item demo-mypanel">
+
+            <style>
+              .demo-filmstrip-item {
+                box-sizing: border-box;
+                width: 90px;
+                height: 50px;
+                margin: 2px;
+                text-align: center;
+                font-weight: bold;
+                color: #333;
+              }
+            </style>
+        
+            <div id="filmStripDiv" class="oj-panel" style="margin: 0px; display: inline-block;">
+              <div style="display: inline-block;">
+                <oj-film-strip id="filmStrip" style="height: 650px;" aria-label="Set of typeArray" orientation="vertical" arrow-placement="adjacent" arrow-visibility="auto">
+            
+                  -- ko foreach: typeArray --
+                  <a href="#" data-bind="style: {display: getItemInitialDisplay($index())}" on-click="[[masterClick]]">
+                    <div class="oj-panel oj-panel-alt2 demo-filmstrip-item">
+                      <span data-bind="text: label"></span>
+                    </div>
+                  </a>
+                  -- /ko --
+            
+                </oj-film-strip>
+              </div>
+            </div>
+        
+        
+          </div>
+        </div> -->
+
+
+
+
+            <!-- Left Side --------------------------------------------------------------------------------------------->
+            <div class="oj-flex-item oj-flex oj-xl-flex-items-1" style="max-width: 55%">
+                <div class="oj-flex-item oj-panel demo-mypanel">
+
+
+                    <!--Title---------------------------------------------------------------------->
+                    <div class="oj-flex" style="max-height: 10%">
+                        <div class="oj-flex-item">
+                            <p style="font-size:30px; text-align: center; font-weight: bold;">
+                                <span data-bind="text: sType"></span>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="oj-flex">
+                        <!-- Chart --------------------------------------------------------------------->
+                        <div class="oj-flex-item oj-flex oj-xl-flex-items-1" style="max-width: 50%">
+                            <div class="oj-flex" style="margin: 1px;">
+                                <div class="oj-flex-item">
+                                    <p style="font-size:12px; font-weight:bold; color:red;">Output:</p>
+                                </div>
+                            </div>
+                            <div class="oj-flex">
+                                <div class="oj-flex-item">
+                                    <oj-chart id="lineChart" type="line" series="[[lineSeriesValue]]" groups="[[lineGroupsValue]]" animation-on-display="auto" animation-on-data-change="auto" orientation="vertical" hover-behavior="dim" style="max-width:500px;width:100%;height:300px;">
+                                    </oj-chart>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Table -- Unit Information ------------ style='width: 100%; height:100%;'----------------------------------->
+                        <div class="oj-flex-item oj-flex oj-xl-flex-items-1" style="max-width: 50%">
+                            <div class="oj-flex-item">
+                                <!-- <div class="oj-flex">
+                      <div class="oj-flex-item">
+                        <p style="font-size:12px; font-weight:bold; color:red;">Unit Info.:</p>
+                      </div>
+                    </div> -->
+                                <div class="oj-flex">
+                                    <div class="oj-flex-item" style="font-size: 12px; font-weight: bold; max-width: 50%;">
+                                        <oj-table id="InfoTable" aria-label="Info Table" display='grid' data='[[infoprovider]]' columnsDefault='[{"headerStyle": "font-size:12px; font-weight:bold; color:red;"}]' columns-default='{"sortable": "disabled", "headerStyle": "font-size:12px; font-weight:bold; color:red;"}'
+                                            columns='[{"headerText": "Unit Info.:", "field": "id"}, {"field": "item"}]'>
+                                        </oj-table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- Table -- Previous Code   ----------------------------------------------->
+                    <div class="oj-flex" style="font-size: 10px; font-weight: bold; max-height: 45%">
+                        <div class="oj-flex-item">
+                            <div class="oj-flex" style="margin: 1px;">
+                                <div class="oj-flex-item">
+                                    <p style="font-size:12px; font-weight:bold; color:red;">Code History:</p>
+                                </div>
+                            </div>
+                            <div class="oj-flex">
+                                <div class="oj-flex-item oj-flex oj-xl-flex-items-1">
+                                    <oj-table id="PreTable" aria-label="Info Table" display='grid' data='[[preprovider]]' columns-default='{"sortable": "disabled"}' columns='[
+                                                {"headerText": "Date & Time", "field": "cp_date"},
+                                                {"headerText": "Code", "field": "code"},
+                                                {"headerText": "IMEI", "field": "i_esn"}
+                                               ]' style='width: 100%; height:100%;'>
+                                    </oj-table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+            <!-- Right Side --------------------------------------------------------------------------------------------->
+            <div class="oj-flex-item oj-flex oj-xl-flex-items-1" style="max-width: 45%">
+                <div class="oj-flex-item oj-panel demo-mypanel">
+
+
+                    <!-- Inspection -->
+                    <!-- <div class="oj-flex">
+            <div class="oj-flex-item">
+              <p style="font-size:30px; text-align: center; font-weight: bold;">
+                <span data-bind="text: sType"></span>
+              </p>
+            </div>
+          </div> -->
+
+
+
+
+                    <!--IMEI ----------------------------------------------------------------------------------------------->
+                    <div class="oj-flex">
+
+
+
+
+
+                        <div class="oj-flex-item">
+                            <div class='oj-form'>
+                                <div class='oj-flex-bar'>
+                                    <div class='oj-flex-bar-start'>
+                                        <oj-label for='textIMEI' class="oj-label-inline">
+                                            <p style="font-size:14px; font-weight:bold;">IMEI:&nbsp;&nbsp;</p>
+                                        </oj-label>
+                                    </div>
+                                    <div id='idImeiText' class='oj-flex-bar-middle'>
+                                        <oj-input-text id="textIMEI" data-bind="event: {keypress: enterKeypress}" raw-value="{{imei}}" value="{{imei}}"></oj-input-text>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <oj-label for="textIMEI">
+                      <p style="font-size:14px; font-weight:bold;">IMEI:&nbsp;&nbsp;</p>
+                    </oj-label>
+                  </div>
+
+
+                  <div class="oj-flex-item">
+                    <oj-input-text id="textIMEI" value="{{imei}}"></oj-input-text> -->
+                        </div>
+
+
+                        <div class="oj-flex-item">
+                            <oj-label for="textPOS">
+                                <p style="font-size:14px; font-weight:bold;">POS:&nbsp;&nbsp;</p>
+                            </oj-label>
+                        </div>
+
+
+                        <div class="oj-flex-item">
+                            <span data-bind="text: "></span>
+                            <!-- <oj-text-area id="textPOS" value="{{}}"></oj-text-area> -->
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+
+
+                    <!-- Code Table ----------------------------------------------------------------------------------------------------->
+                    <!-- scroll-policy='loadMoreOnScroll' scroll-policy-options='{"fetchSize": 10}' -->
+                    <!-- {"headerText": "ID", "field": "id"},{"headerText": "Date", "field": "cp_date"},           -->
+                    <div id="tableDemo" class="oj-flex oj-flex-items-pad oj-panel-shadow-sm" style="margin: 1px;">
+                        <div class="oj-flex-item">
+                            <div class="oj-flex" style="margin: 1px;">
+                                <div class="oj-flex-item" style="width: 100%;">
+                                    <p style="font-size:12px; font-weight:bold; color:red;">Unit Code V1.1:</p>
+                                </div>
+                            </div>
+                            <div class="oj-flex oj-flex-items-pad">
+                                <div class="oj-flex-item" style="margin: 5px;">
+                                    <oj-table id="table" aria-label="Code Table" display='grid' data='[[codeprovider]]' scroll-policy='loadMoreOnScroll' scroll-policy-options='{"fetchSize": 5}' columns-default='{"sortable": "disabled"}' columns='[
+                                    {"headerText": "Code",  "field": "code"},
+                                    {"headerText": "Desc.", "field": "bc_desc"}
+                                                                                         ]' style='width: 100%; height: 100%; min-height: 230px; word-wrap: break-word; white-space: normal;'>
+                                        <!-- <template slot="c1" data={{$current.data}}>
+                                        <oj-button class="oj-button-confirm" id="ButtonCreate" data-bind="attr: {id: 'button' + $context.index}" on-oj-action="[[ListenerdeleteKey]]">
+                                          <span class="oj-fwk-icon oj-fwk-icon-arrow-e" slot="startIcon">&nbsp;Delete&nbsp;&nbsp;</span>
+                                          <oj-bind-text data={{$current.data}}></oj-bind-text>
+                                        </oj-button>
+                                      </template>                                                      -->
+                                    </oj-table>
+                                </div>
+                            </div>
+
+
+                            <div class="oj-flex oj-flex-items-pad" style="margin: 5px;">
+                                <div class="oj-flex-item"></div>
+                                <div class="oj-flex-item oj-sm-flex-initial">
+                                    <oj-button class="oj-button-primary" id="ButtonCreate" on-oj-action="[[addKey]]"><span class="oj-fwk-icon oj-fwk-icon-arrow-e" slot="startIcon">&nbsp;Clear&nbsp;&nbsp;</span></oj-button>
+                                </div>
+                                <div class="oj-flex-item"></div>
+                                <div class="oj-flex-item oj-sm-flex-initial">
+                                    <oj-button class="oj-button-primary" id="ButtonSave" on-oj-action="[[ListenerSave]]"><span class="oj-fwk-icon oj-fwk-icon-clock" slot="startIcon">&nbsp;Save&nbsp;&nbsp;</span></oj-button>
+                                </div>
+                                <div class="oj-flex-item"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+
+                    <!-- Code ----------------------------------------------------------------------------------------------------------->
+                    <div class="oj-flex oj-flex-items-pad" style="max-width: 100%">
+                        <div class="oj-flex-item">
+                            <dev class="oj-flex-itmes" style="margin: 1px;">
+                                <div class="oj-flex" style="margin: 1px;">
+                                    <div class="oj-flex-item" style="width: 100%;">
+                                        <p style="font-size:12px; font-weight:bold; color:red;">Code Set:</p>
+                                    </div>
+                                </div>
+                                <dev class="oj-flex" style="max-width: 100%">
+                                    <style>
+                                        .demo-container {
+                                            position: relative;
+                                            width: 100%;
+                                            height: 100%;
+                                            overflow: hidden;
+                                        }
+                                        
+                                        .demo-panel {
+                                            height: calc(100% - 40px);
+                                        }
+                                    </style>
+
+                                    <div class="oj-flex-item" style="max-width: 50%">
+                                        <div id="moduleDemo1" class="demo-container" data-bind="ojModule: {name: modulePath1, 
+                                                                            animation: getCustomAnimation1(),
+                                                                            params: { currentList1: currentList1,
+                                                                                      currentModule1: currentModule1,
+                                                                                      content1: content1,
+                                                                                      sType1: sType1,
+                                                                                      sImei1: sImei1
+                                                                                    }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="oj-flex-item" style="max-width: 50%">
+                                        <div id="moduleDemo2" class="demo-container" data-bind="ojModule: {name: modulePath2, 
+                                                                            animation: getCustomAnimation2(),
+                                                                            params: {currentList2: currentList2,
+                                                                                      currentModule2: currentModule2,
+                                                                                      content2: content2,
+                                                                                      sType2: sType2,
+                                                                                      sImei2: sImei2
+                                                                                    }}">
+                                        </div>
+                                    </div>
+                                </dev>
+                            </dev>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- masonrylayout ------------------------------------------------------------------------------------>
+                    <div class="oj-flex">
+                        <div class="oj-flex-item">
+
+
+                            <!-- <style>
+                .demo-tile {
+                  font-weight: bold;
+                }
+
+
+                .demo-zoom-transition {
+                  transition: opacity .5s, left .5s, top .5s, width .5s, height .5s;
+                }
+
+
+                .demo-scroll-container {
+                  overflow: auto;
+                }
+              </style>
+
+
+
+
+              <div id="masonrylayout-basic-example">
+
+
+
+
+                <div class="demo-scroll-container">
+                  <oj-dialog style="display:none" id="dialog" drag-affordance="none" resize-behavior="none"
+                    cancel-behavior="icon" position="[[dialogPosition]]"
+                    on-oj-before-open="[[demoDialogBeforeOpen]]" on-oj-animate-start="[[demoDialogAnimateStart]]"
+                    on-oj-close="[[demoDialogClose]]" on-oj-before-close="[[demoDialogBeforeClose]]"> -->
+                            <!-- Note: the user must provide the aria-labelledby attribute 
+                      for the dialog to be accessible -->
+                            <!-- <div slot="header" class="oj-helper-clearfix" aria-labelledby="dialogTitleId">
+                      <span id="dialogTitleId" class="oj-dialog-title" data-bind="text: zoomData().name"></span>
+                    </div>
+                    <div slot="body">
+                      <span data-bind="text: zoomData().content"></span>
+                    </div>
+                  </oj-dialog>
+
+
+                  <oj-masonry-layout id="masonryLayout"> >
+                    <ko foreach: chemicals -->
+                            <!--div class="oj-panel demo-tile" data-bind="css: sizeClass, 
+                             attr: {id: getTileId($index())}">
+                      <div data-bind="text: name, 
+                               attr: {id: getLabelId($index())}"></div>
+
+                      <oj-button on-oj-action="[[demoZoomTile]]" data-bind="attr: {
+                               id: getButtonId($index()), 
+                               'aria-labelledby': getButtonLabelledBy($index())}">
+                        Zoom
+                      </oj-button>
+                    </div> 
+                    < /ko -->
+                            <!-- </oj-masonry-layout>
+                </div>
+              </div> -->
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+</div>

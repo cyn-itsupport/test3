@@ -1,0 +1,26 @@
+<div id="page2" class="demo-page">
+    <oj-button id="buttonIcon2" on-click='[[gotoList]]'>
+        <span slot='startIcon' class='oj-fwk-icon-caret-start oj-fwk-icon'></span>
+        Back
+    </oj-button>
+    <div id="page1" class="demo-page">
+        <oj-list-view id="listview1" aria-label="drill down list" data='[[dataSource1]]'
+          item.renderer='[[oj.KnockoutTemplateUtils.getRenderer("note_template", true)]]'
+          on-current-item-changed='[[gotoContent]]'>
+        </oj-list-view>
+      </div>
+      
+      <script type="text/html" id="note_template">
+              <li data-bind="attr: {id: 'item'+id}">
+                  <div class="oj-flex" style="height: 5px">
+                      <div class="oj-flex-item" style="font-size:12px; font-weight: bold" data-bind="text: id"></div>
+                      <div class="oj-flex-item oj-flex-item-initial">
+                        <div class="oj-flex oj-sm-flex-items-initial oj-sm-justify-content-flex-end oj-sm-align-items-center">                
+                          <span class="oj-flex-item" style="font-size:12px" data-bind="text: bc_desc"></span>
+                          <div role="presentation" style="position: relative; margin: 0" class="oj-flex-item oj-fwk-icon oj-listview-drill-icon"></div>
+                        </div>
+                      </div>         
+                  </div>
+              </li>
+          </script>
+</div>

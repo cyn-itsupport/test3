@@ -1,0 +1,324 @@
+<div id="container">
+  <div style="margin: 1px;" class="demo-flex-display">
+
+
+
+
+    <!-- Train  ---------------------------------------------------------------------------------------------------->
+    <div class="oj-flex">
+      <div class="oj-flex-item">
+
+        <div id="sampleDemo" style="margin: 1px;" class="demo-palette-panel oj-panel oj-panel-shadow-sm">
+          <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+            <div id="train-container">
+              <oj-train id="train" class="oj-train-stretch" style="max-width:95%;margin-left:auto;margin-right:auto;"
+                on-selected-step-changed="[[updateLabelText]]" selected-step="{{selectedStepValue}}"
+                steps="[[stepArray]]">
+              </oj-train>
+              <!-- <br />
+              <h3 id="currentStepText" data-bind="text:selectedStepLabel()" style="font-size:30px; text-align: center">
+              </h3>
+              <br /> -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <!-- Film strip -------------------------------------------------------------------------------------------------------->
+    <div class="oj-flex">
+      <!-- <div class="oj-flex"> -->
+      <div class="oj-flex-item">
+
+        <style>
+          .demo-filmstrip-item {
+            box-sizing: border-box;
+            width: 110px;
+            height: 55px;
+            margin: 3px;
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+          }
+        </style>
+        <div id="sampleDemo" style="margin: 2px;" class="demo-palette-panel oj-panel oj-panel-shadow-sm">
+          <oj-film-strip id="filmStrip" aria-label="Set of typeArray" arrow-placement="adjacent"
+            arrow-visibility="auto">
+
+            <!-- ko foreach: typeArray -->
+            <a href="#" data-bind="style: {display: getMasterItemInitialDisplay($index())}, 
+                         attr:  {'aria-labelledby': getMasterItemLabelledBy($index())}, 
+                         click: masterClick">
+              <div class="oj-panel oj-panel-alt2 demo-filmstrip-item"
+                data-bind="css:{'oj-selected': isMasterItemSelected($index())}">
+                <span data-bind="text: label"></span>
+              </div>
+            </a>
+            <!-- /ko -->
+
+          </oj-film-strip>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <div id="sampleDemo" style="" class="demo-padding demo-container">
+      <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+
+        <style>
+          .demo-panelwrapper>.oj-flex-item {
+            padding: 1px 1px 1px 1px;
+          }
+        </style>
+
+        <div id="panelPage">
+
+          <div class="oj-flex demo-panelwrapper">
+
+
+
+            <!-- Left Side --------------------------------------------------------------------------------------------->
+            <div class="oj-lg-6 oj-flex-item oj-flex oj-xl-flex-items-1">
+              <div class="oj-flex-item oj-panel demo-mypanel">
+                  <style>
+                    .demo-container
+                    {
+                      position: relative;
+                      width: 100%;
+                      height: 320px;
+                    }
+
+                    .demo-panel
+                    {
+                      height: calc(100% - 40px);
+                    }
+
+                    .demo-page
+                    {
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      top: 0;
+                      left: 0;
+                      padding: 10px;
+                      box-sizing: border-box;
+                      overflow: auto;
+                      background-color: white;
+                    }
+                  </style>
+
+                  <div id="listviewContainer" class="demo-container">
+                      <div id="page1" class="demo-page">
+                          <oj-list-view id="listview" aria-label="drill down list" 
+                              data="[[dataProvider]]" on-selection-changed="[[gotoContent]]" selection-mode="single">
+                              <template slot="itemTemplate">
+                                  <div class="oj-flex-bar">
+                                      <div class="oj-flex-bar-middle oj-flex-bar">
+                                          <div class="oj-flex-bar-middle" style="font-weight: bold">
+                                              <oj-bind-text value="[[$current.data.name]]"></oj-bind-text>
+                                          </div>
+                                          <div class="oj-flex-bar-end">
+                                              <span class="oj-flex-item"><oj-bind-text value="[[$current.data.date]]"></oj-bind-text></span>
+                                          </div>
+                                      </div>
+                                      <div class="oj-flex-bar-end oj-sm-align-items-center">
+                                        <div role="presentation" class="oj-flex-item oj-fwk-icon oj-listview-drill-icon"></div>
+                                      </div>         
+                                  </div>
+                              </template>
+                          </oj-list-view>
+                      </div>
+                  
+                      <div id="page2" class="demo-page demo-page2-hide">
+                          <oj-button id="buttonIcon2" on-oj-action="[[gotoList]]">
+                            <span slot="startIcon" class="oj-fwk-icon-caret-start oj-fwk-icon"></span>
+                          Back
+                          </oj-button>
+                          <div class="oj-panel demo-panel">
+                              <span data-bind="text: content"></span>
+                          </div>
+                      </div>
+                  </div>
+
+
+              </div>
+            </div>
+
+
+
+
+            <!-- Right Side --------------------------------------------------------------------------------------------->
+            <div class="oj-lg-6fe oj-flex-item oj-flex oj-xl-flex-items-1">
+              <div class="oj-flex-item oj-panel demo-mypanel">
+
+                <!-- Inspection -->
+                <div class="oj-flex">
+                  <div class="oj-flex-item">
+                    <p style="font-size:30px; text-align: center; font-weight: bold;"><span
+                        data-bind="text: sType()"></span>
+                    </p>
+                  </div>
+                </div>
+
+
+                <!--IMEI ----------------------------------------------------------------------------------------------->
+                <div class="oj-flex">
+
+                  <div class="oj-flex-item oj-sm-flex-initial">
+                    <oj-label for="textIMEI">
+                      <p style="font-size:14px; font-weight:bold;">IMEI:&nbsp;&nbsp;</p>
+                    </oj-label>
+                  </div>
+
+                  <div class="oj-flex-item">
+                    <oj-input-text id="textIMEI" value="{{imei}}"></oj-input-text>
+                  </div>
+
+                  <div class="oj-flex-item oj-sm-flex-initial">
+                    <oj-label for="textPOS">
+                      <p style="font-size:14px; font-weight:bold;">POS:&nbsp;&nbsp;</p>
+                    </oj-label>
+                  </div>
+
+                  <div class="oj-flex-item">
+                    <oj-text-area id="textPOS" value="{{imei}}"></oj-text-area>
+                  </div>
+
+                </div>
+
+
+
+
+
+
+                
+
+
+                <div class="oj-flex">
+                    <div class="oj-flex-item">
+                        <div id="moduleDemo" class="demo-container" data-bind="ojModule: {name: modulePath, 
+                          animation: getCustomAnimation(),
+                          params: {currentList: currentList,
+                                   currentModule: currentModule,
+                                   content: content}}">
+                        </div>  
+                    </div> 
+                </div>
+
+
+
+
+
+
+
+
+                <!-- masonrylayout ------------------------------------------------------------------------------------>
+                <div class="oj-flex">
+                  <div class="oj-flex-item">
+
+                    <style>
+                      .demo-tile {
+                        font-weight: bold;
+                      }
+
+                      .demo-zoom-transition {
+                        transition: opacity .5s, left .5s, top .5s, width .5s, height .5s;
+                      }
+
+                      .demo-scroll-container {
+                        overflow: auto;
+                      }
+                    </style>
+
+
+                    <div id="masonrylayout-basic-example">
+
+
+                      <div class="demo-scroll-container">
+                        <oj-dialog style="display:none" id="dialog" drag-affordance="none" resize-behavior="none"
+                          cancel-behavior="icon" position="[[dialogPosition]]"
+                          on-oj-before-open="[[demoDialogBeforeOpen]]" on-oj-animate-start="[[demoDialogAnimateStart]]"
+                          on-oj-close="[[demoDialogClose]]" on-oj-before-close="[[demoDialogBeforeClose]]">
+                          <!-- Note: the user must provide the aria-labelledby attribute 
+                            for the dialog to be accessible -->
+                          <div slot="header" class="oj-helper-clearfix" aria-labelledby="dialogTitleId">
+                            <span id="dialogTitleId" class="oj-dialog-title" data-bind="text: zoomData().name"></span>
+                          </div>
+                          <div slot="body">
+                            <span data-bind="text: zoomData().content"></span>
+                          </div>
+                        </oj-dialog>
+
+                        <oj-masonry-layout id="masonryLayout">
+                          <!-- ko foreach: chemicals -->
+                          <div class="oj-panel demo-tile" data-bind="css: sizeClass, 
+                                   attr: {id: getTileId($index())}">
+                            <div data-bind="text: name, 
+                                     attr: {id: getLabelId($index())}"></div><br>
+                            <oj-button on-oj-action="[[demoZoomTile]]" data-bind="attr: {
+                                     id: getButtonId($index()), 
+                                     'aria-labelledby': getButtonLabelledBy($index())}">
+                              Zoom
+                            </oj-button>
+                          </div>
+                          <!-- /ko -->
+                        </oj-masonry-layout>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </div>
+            </div>
+
+
+
+          </div>
+
+
+
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
